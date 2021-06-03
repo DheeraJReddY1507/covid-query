@@ -1,0 +1,47 @@
+<html>
+
+<body>
+
+<h1 style="text-align:center;font-size:150%;"> Hi Everyone !!! </h1>
+
+<p> Please choose option as per reqirement </p>
+<h> 1 : Get Number of confirmed cases till date for Country/State</h><br>
+<h> 2 : Get Number of confirmed cases between dates for Country/State</h><br>
+<h> 3 : Get Average Number of cases per day in time interval for Country/State</h><br>
+
+
+<p id="demo">Choice: 1</p>
+<form action = "http://localhost:5000/login" method = "post">
+<select id="mySelect" name = "swcase" onchange="myFunction()">
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+</select>
+
+<p><label for="country_name">Country name : </label><input type = "text" name = "country_name" required/></p>
+<p><label for="state_name">State name : </label><input type = "text" name = "state_name" value = "None" /></p>
+<h>Please enter dates </h>
+<p><input style = "display:none;" type = "date" name = "from_date" id = "to" value = "2020-01-01" min = "2020-01-01" max = "2021-05-01" required/></p>
+<p><input type = "date" name = "to_date" value = "2020-01-01" min = "2020-01-01" max = "2021-05-01" required/></p>
+
+<p><input type = "submit" value = "Submit" /></p>
+
+</form>
+
+
+<script>
+function myFunction() {
+var x = document.getElementById("mySelect").value;
+document.getElementById("demo").innerHTML = "Selected: " + x;
+if(x=='1'){
+document.getElementById("to").style.display = 'none';
+}
+else{
+document.getElementById("to").style.display = 'block';
+}
+}
+</script>
+
+</body>
+
+</html>
